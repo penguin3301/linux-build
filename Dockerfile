@@ -6,7 +6,6 @@ RUN useradd -m -G wheel builder
 RUN echo "%wheel ALL=(ALL:ALL) NOPASSWD:ALL" >/etc/sudoers.d/00-sudo-nopasswd
 
 RUN mkdir /data
-VOLUME /data
 
 USER builder
 

@@ -6,9 +6,8 @@ repo="$(printenv REPO)"
 
 cd "/data"
 sudo mkdir "build"
-sudo chown -R "$USER:$USER" "build"
-sudo chmod 700 build
-ls -l
+sudo chown -vR "builder:builder" "build"
+sudo chmod -v 700 build
 cd "build"
 
 gpg --keyserver keys.openpgp.org --recv-keys 19802F8B0D70FC30
