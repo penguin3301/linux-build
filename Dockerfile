@@ -7,8 +7,6 @@ RUN echo "%wheel ALL=(ALL:ALL) NOPASSWD:ALL" >/etc/sudoers.d/00-sudo-nopasswd
 
 RUN mkdir /data
 VOLUME /data
-RUN mkdir /data/linux
-RUN chown -R builder:builder /data/linux
 
 USER builder
 
