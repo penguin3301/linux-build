@@ -30,7 +30,7 @@ jobs:
       
       - name: Create Data Dir
         run: |
-          [ -f /data ] && mkdir -v /data
+          [ -d /data ] && mkdir -v /data || exit 0
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag linux_build:latest
