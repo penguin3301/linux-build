@@ -20,6 +20,10 @@ jobs:
         with:
           path: /var/cache/pacman
           key: ${{ runner.os }}-pacman
+      
+      - name: Create Data Dir
+        run: |
+          [ -d /data ] && mkdir -v /data || exit 0
 
       - name: Cache Data
         id: cache-data
@@ -27,10 +31,6 @@ jobs:
         with:
           path: /data
           key: ${{ runner.os }}-data
-      
-      - name: Create Data Dir
-        run: |
-          [ -d /data ] && mkdir -v /data || exit 0
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag linux_build:latest

@@ -1,4 +1,4 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: alexcoder04 <alexcoder04@protonmail.com>
 
 pkgbase=linux-alexcoder04
 pkgver=6.1.8.arch1
@@ -192,7 +192,7 @@ _package-docs() {
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
 }
 
-pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
+pkgname=("$pkgbase" "$pkgbase-headers")
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
     $(declare -f "_package${_p#$pkgbase}")
