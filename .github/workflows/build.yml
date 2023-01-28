@@ -29,7 +29,8 @@ jobs:
           key: ${{ runner.os }}-data
       
       - name: Create Data Dir
-        run: [ -f /data ] && mkdir -v /data
+        run: |
+          [ -f /data ] && mkdir -v /data
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag linux_build:latest
