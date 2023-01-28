@@ -10,4 +10,7 @@ RUN mkdir /data
 USER builder
 
 COPY entrypoint.sh /entrypoint.sh
+COPY PKGBUILD /PKGBUILD
+COPY config /config
+
 ENTRYPOINT [ "/entrypoint.sh" ]
